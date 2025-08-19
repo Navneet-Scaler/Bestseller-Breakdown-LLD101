@@ -61,7 +61,8 @@ public class Driver {
                     default:
                         System.out.println("Invalid choice. Please enter a number between 1 and 6.");
                 }
-            } catch (NumberFormatException e) {
+            } 
+            catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a valid number.");
             }
         }
