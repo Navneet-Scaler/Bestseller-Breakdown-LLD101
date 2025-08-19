@@ -36,6 +36,23 @@ public class Driver {
         System.out.println("------------------------");
     }
 
+    // Task 3) Function to find all books by a given author
+    public static void findBooksByAuthor(String authorName) {
+        System.out.println("\n--- Books by " + authorName + " ---");
+        boolean found = false;
+        for (Book book : dataset) {
+            if (book.getAuthor().equalsIgnoreCase(authorName)) {
+                System.out.println(" - " + book.getTitle());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books found for this author.");
+        }
+        System.out.println("------------------------");
+    }
+
     
+
 
 }
