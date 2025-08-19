@@ -11,4 +11,14 @@ public class Driver {
         dataset = DatasetReader.readDataset("bestsellers.csv");
         System.out.println("Successfully loaded " + dataset.size() + " books.");
     }
+    // Task 1) Function to count books by a given author
+    public static void countBooksByAuthor(String authorName) {
+        long count = 0;
+        for (Book book : dataset) {
+            if (book.getAuthor().equalsIgnoreCase(authorName)) {
+                count++;
+            }
+        }
+        System.out.println("Author '" + authorName + "' has " + count + " book(s) in the bestseller list.");
+    }
 }
