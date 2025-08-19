@@ -35,8 +35,7 @@ public class DatasetReader {
                     }
                 }
             }
-        } 
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
