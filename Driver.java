@@ -68,6 +68,21 @@ public class Driver {
         System.out.println("---------------------------------");
     }
 
+    // Task 5) Function to list book prices by an author
+    public static void findPricesByAuthor(String authorName) {
+        System.out.println("\n--- Book Prices by " + authorName + " ---");
+        boolean found = false;
+        for (Book book : dataset) {
+            if (book.getAuthor().equalsIgnoreCase(authorName)) {
+                System.out.println(" - " + book.getTitle() + ": $" + book.getPrice());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books found for this author.");
+        }
+        System.out.println("---------------------------------");
+    }
     
 
 
