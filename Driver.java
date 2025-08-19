@@ -9,7 +9,63 @@ public class Driver {
 
     public static void main(String[] args) {
         dataset = DatasetReader.readDataset("bestsellers.csv");
-        System.out.println("Successfully loaded " + dataset.size() + " books.");
+        if (dataset.isEmpty()) {
+            System.out.println("Dataset could not be loaded. Exiting.");
+            return;
+        }
+        System.out.println("✅ Successfully loaded " + dataset.size() + " book records.");
+
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+
+        while (choice != 6) {
+            System.out.println("\n===== Amazon Bestsellers Menu =====");
+            System.out.println("1. Get total books by an author");
+            System.out.println("2. List all unique authors");
+            System.out.println("3. List all books by an author");
+            System.out.println("4. Find books by user rating");
+            System.out.println("5. Get prices of books by an author");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
+
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter author's name: ");
+                        String authorCountName = scanner.nextLine();
+                        countBooksByAuthor(authorCountName);
+                        break;
+                    case 2:
+                        printAllAuthors();
+                        break;
+                    case 3:
+                        System.out.print("Enter author's name: ");
+                        String authorBooksName = scanner.nextLine();
+                        findBooksByAuthor(authorBooksName);
+                        break;
+                    case 4:
+                        System.out.print("Enter user rating (e.g., 4.7): ");
+                        double rating = Double.parseDouble(scanner.nextLine());
+                        findBooksByRating(rating);
+                        break;
+                    case 5:
+                        System.out.print("Enter author's name: ");
+                        String authorPriceName = scanner.nextLine();
+                        findPricesByAuthor(authorPriceName);
+                        break;
+                    case 6:
+                        System.out.println("Exiting application. Goodbye! 👋");
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please enter a number between 1 and 6.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
+        scanner.close();
     }
     
     // Task 1) Function to count books by a given author
@@ -83,7 +139,7 @@ public class Driver {
         }
         System.out.println("---------------------------------");
     }
-    
+
 
 
 }
