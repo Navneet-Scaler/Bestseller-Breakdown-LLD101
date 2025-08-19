@@ -52,6 +52,22 @@ public class Driver {
         System.out.println("------------------------");
     }
 
+    // Task 4) Function to find books by a specific rating
+    public static void findBooksByRating(double rating) {
+        System.out.println("\n--- Books with a rating of " + rating + " ---");
+        boolean found = false;
+        for (Book book : dataset) {
+            if (book.getUserRating() == rating) {
+                System.out.println(" - " + book.getTitle() + " by " + book.getAuthor());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books found with this exact rating.");
+        }
+        System.out.println("---------------------------------");
+    }
+
     
 
 
