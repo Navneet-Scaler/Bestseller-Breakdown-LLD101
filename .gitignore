@@ -1,5 +1,9 @@
-kaggle.json
-*.zip
-*.csv
+# Compiled Java class files
 *.class
-/out
+
+# Log files
+*.log
+
+# IDE files
+.idea/
+*.iml
