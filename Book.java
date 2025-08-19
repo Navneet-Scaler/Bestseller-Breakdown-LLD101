@@ -19,7 +19,7 @@ public class Book {
         this.genre = genre;
     }
 
-    // --- Getters to access the private attributes ---
+    // Getters to access the private attributes
 
     public String getTitle() {
         return title;
@@ -49,7 +49,7 @@ public class Book {
         return genre;
     }
 
-    // A helper method to print details, better than a simple print statement
+    // Helper method to print details, better than a simple print statement
     public void printDetails() {
         System.out.println("--------------------");
         System.out.println("Title: " + title);
